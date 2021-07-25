@@ -1,6 +1,61 @@
 <h1 class="mt-5">API Youtube</h1>
 <hr />
+<h1>Datos del canal</h1>
+
+<ng-container *ngIf="this.chanelDetails$ | async as chanelDetails">
+  <h2>Titulo: {{ chanelDetails["items"][0]["snippet"]["title"] }}</h2>
+  <p>Descripción: {{ chanelDetails["items"][0]["snippet"]["description"] }}</p>
+  <a
+    href="https://developers.google.com/youtube/v3/docs/channels/list?hl=es-419&apix_params=%7B%22part%22%3A%5B%22snippet%22%2C%22statistics%20%22%2C%22id%22%2C%22topicDetails%22%2C%22contentDetails%22%5D%2C%22id%22%3A%5B%22UCFKZxStYsOVrzdN_FCZ0NGg%22%5D%7D"
+  >
+    Link de la API
+  </a>
+  <div style="display: flex">
+    <div>
+      <img
+        [src]="
+          chanelDetails['items'][0]['snippet']['thumbnails']['default']['url']
+        "
+        alt=""
+        width="200"
+        height="200"
+      />
+    </div>
+    <div style="padding: 0 0 0 30px; width: 300px; box-sizing: border-box">
+      <h3>Estadisticas</h3>
+      <span
+        ><strong>Cantidad de vistas :</strong>
+        {{ chanelDetails["items"][0]["statistics"]["viewCount"] }}</span
+      >
+      <br />
+      <span
+        ><strong>Cantidad de subscriptores :</strong>
+        {{ chanelDetails["items"][0]["statistics"]["subscriberCount"] }}</span
+      >
+      <br />
+      <span
+        ><strong>Cantidad de videos :</strong>
+        {{ chanelDetails["items"][0]["statistics"]["videoCount"] }}</span
+      >
+    </div>
+  </div>
+</ng-container>
+
+<hr />
+<div
+  class="g-ytsubscribe"
+  data-channelid="UCdI8MAC5HoPJSJ4zrgDDI-Q"
+  data-layout="default"
+  data-count="default"
+></div>
 <ng-container *ngIf="this.videos | async as itemsTotales">
+  <h1>Usando la API de Youtube para insertar Button de suscripción</h1>
+
+  <hr />
+  <h1>
+    Usando la API de youtube para listar una de las tantas lista de reproducción
+    que un artista puede tener
+  </h1>
   <div class="card-columns">
     <div class="card animated fadeIn" *ngFor="let video of itemsTotales.items">
       <img

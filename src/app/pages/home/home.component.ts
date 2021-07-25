@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class HomeComponent implements OnInit {
   isDisabled: boolean = false;
   position: number = 1;
+  chanelDetails$: Observable<any>;
   videos: Observable<{
     size: number;
     items: Video[];
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarVideos();
+    this.chanelDetails$ = this.youtubeService.getChanel();
   }
 
   cargarVideos() {
