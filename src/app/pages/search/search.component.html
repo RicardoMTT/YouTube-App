@@ -1,3 +1,27 @@
 <div [formGroup]="searchForm">
   <input type="text" formControlName="keyword" />
 </div>
+
+<ng-container *ngIf="response | async">
+  <div *ngIf="(response | async)?.items as response">
+    <div *ngFor="let res of response">
+      <div *ngIf="(res.id.kind | myPipe) == 'video'; else isChannel">
+        <div style="background: yellowgreen; color: white">
+          {{ res.id.kind | myPipe }}
+        </div>
+      </div>
+      <ng-template #isChannel>
+        <div style="background: teal; color: white">
+          {{ res.id.kind | myPipe }}
+        </div>
+      </ng-template>
+
+      <img [src]="res.snippet.thumbnails.default.url" alt="" />
+      <strong>{{ res.snippet.title }}</strong>
+      <p>{{ res.snippet.description }}</p>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="isLoading">
+  <span>loading...</span>
+</ng-container>

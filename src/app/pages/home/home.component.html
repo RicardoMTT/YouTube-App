@@ -1,15 +1,9 @@
-<h1 class="mt-5">API Youtube</h1>
-<hr />
 <h1>Datos del canal</h1>
 
 <ng-container *ngIf="this.chanelDetails$ | async as chanelDetails">
-  <h2>Titulo: {{ chanelDetails["items"][0]["snippet"]["title"] }}</h2>
+  <h3>Titulo: {{ chanelDetails["items"][0]["snippet"]["title"] }}</h3>
   <p>Descripción: {{ chanelDetails["items"][0]["snippet"]["description"] }}</p>
-  <a
-    href="https://developers.google.com/youtube/v3/docs/channels/list?hl=es-419&apix_params=%7B%22part%22%3A%5B%22snippet%22%2C%22statistics%20%22%2C%22id%22%2C%22topicDetails%22%2C%22contentDetails%22%5D%2C%22id%22%3A%5B%22UCFKZxStYsOVrzdN_FCZ0NGg%22%5D%7D"
-  >
-    Link de la API
-  </a>
+
   <div style="display: flex">
     <div>
       <img
@@ -95,3 +89,9 @@
     </div>
   </div>
 </ng-container>
+
+<a
+  href="https://developers.google.com/youtube/v3/docs/channels/list?hl=es-419&apix_params=%7B%22part%22%3A%5B%22snippet%22%2C%22statistics%20%22%2C%22id%22%2C%22topicDetails%22%2C%22contentDetails%22%5D%2C%22id%22%3A%5B%22UCFKZxStYsOVrzdN_FCZ0NGg%22%5D%7D"
+>
+  Link de la API
+</a>

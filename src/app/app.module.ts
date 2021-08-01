@@ -8,8 +8,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './pages/search/search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyPipePipe } from './pipes/myPipeName';
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, SearchComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    SearchComponent,
+    MyPipePipe,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

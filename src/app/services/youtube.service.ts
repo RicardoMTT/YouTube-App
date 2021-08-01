@@ -37,9 +37,7 @@ export class YoutubeService {
       .set('maxResults', '10')
       .set('q', keyword)
       .set('pageToken', this.nextPageToken);
-    return this.http
-      .get<YoutubeResponse>(url, { params })
-      .pipe(tap((val) => console.log(val)));
+    return this.http.get<any>(url, { params });
   }
   getVideos() {
     const url = `${this.youtubeUrl}/playlistItems`;
