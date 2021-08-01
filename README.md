@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
-## Development server
+## API
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Request Channels : https://developers.google.com/youtube/v3/docs/channels/list?hl=es-419&apix_params=%7B%22part%22%3A%5B%22snippet%22%2C%22statistics%20%22%2C%22id%22%2C%22topicDetails%22%2C%22contentDetails%22%5D%2C%22id%22%3A%5B%22UCFKZxStYsOVrzdN_FCZ0NGg%22%5D%7D
 
 ## Code scaffolding
 
